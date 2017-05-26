@@ -176,3 +176,6 @@ class VolumeManager(volumes.VolumeManager):
                                    search_opts={'host': host}, marker=marker,
                                    limit=limit, offset=offset, sort=sort)
         return self._list(url, "manageable-volumes")
+
+    def get_trust_status(self, volume):
+        return self._action("trust", volume)
