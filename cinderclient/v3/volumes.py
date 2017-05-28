@@ -178,4 +178,5 @@ class VolumeManager(volumes.VolumeManager):
         return self._list(url, "manageable-volumes")
 
     def get_trust_status(self, volume):
-        return self._action("trust", volume)
+        resp, body = self.api.client.get("volumes/%s/trust" % volume)
+        return body
