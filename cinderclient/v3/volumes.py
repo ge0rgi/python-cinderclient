@@ -179,4 +179,4 @@ class VolumeManager(volumes.VolumeManager):
 
     def get_trust_status(self, volume):
         resp, body = self.api.client.get("volumes/%s/trust" % volume)
-        return body
+        return body['trusted']
